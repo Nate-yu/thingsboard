@@ -56,7 +56,7 @@ public class ErrorEvent extends Event {
     @Override
     public EventInfo toInfo(EntityType entityType) {
         EventInfo eventInfo = super.toInfo(entityType);
-        var json = (ObjectNode) eventInfo.getBody();
+        ObjectNode json = (ObjectNode) eventInfo.getBody();
         json.put("method", method);
         if (error != null) {
             json.put("error", error);
